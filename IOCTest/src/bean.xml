@@ -23,4 +23,18 @@
     <bean name="BenzFactory" class="com.test1.CarFactory" factory-method="create">
         <constructor-arg index="0" value="Benz"/>
     </bean>
+    <bean id="Greeter3" class="com.test1.Greeter">
+        <constructor-arg name="message" value="Good evening"/>
+        <constructor-arg name="name" value="Mike"/>
+    </bean>
+    <bean id="Names" class="com.test1.NameLists">
+        <property name="names">
+            <list value-type="java.lang.String">
+                <value>Jack</value>
+                <value>Lily</value>
+                <value>Lucy</value>
+                <value>Mike</value>
+            </list>
+        </property>
+    </bean>
 </beans>

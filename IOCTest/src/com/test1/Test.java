@@ -20,10 +20,16 @@ public class Test {
         greeter1.say();
         Greeter greeter2 = bean.getBean("Greeter2", Greeter.class);
         greeter2.say();
+        Greeter greeter3 = bean.getBean("Greeter3", Greeter.class);
+        greeter3.say();
 
         Car bmw = bean.getBean("BMWFactory", Car.class);
         bmw.run();
         Car benz = bean.getBean("BenzFactory", Car.class);
         benz.run();
+
+        System.out.println("------------list---------------");
+        NameLists names = bean.getBean("Names", NameLists.class);
+        names.print();
     }
 }
