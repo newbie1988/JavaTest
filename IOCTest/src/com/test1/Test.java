@@ -31,5 +31,9 @@ public class Test {
         System.out.println("------------list---------------");
         NameLists names = bean.getBean("Names", NameLists.class);
         names.print();
+
+        System.out.println("------------map----------------");
+        Capitals capitals = bean.getBean("Capitals", Capitals.class);
+        capitals.print();
     }
 }

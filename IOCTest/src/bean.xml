@@ -37,4 +37,14 @@
             </list>
         </property>
     </bean>
+    <bean id="Capitals" class="com.test1.Capitals">
+        <property name="capitals">
+            <map key-type="java.lang.String" value-type="java.lang.String">
+                <entry key="China" value="Beijin"/>
+                <entry key="America" value="Washington"/>
+                <entry key="Japan" value="Tokyo"/>
+                <entry key="England" value="London"/>
+            </map>
+        </property>
+    </bean>
 </beans>
