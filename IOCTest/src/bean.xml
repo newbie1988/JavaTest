@@ -2,8 +2,25 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="Person" class="com.test1.Person" scope="singleton">
+    <bean id="Person" class="com.test1.Person" scope="prototype">
         <property name="name" value="jack"/>
         <property name="age" value="22" />
+    </bean>
+
+    <bean name="Greeter" class="com.test1.Greeter">
+        <!--property name="message" value="Welcome"/-->
+    </bean>
+    <bean name="Greeter1" class="com.test1.Greeter">
+        <constructor-arg index="0" value="Welcome"/>
+    </bean>
+    <bean name="Greeter2" class="com.test1.Greeter">
+        <constructor-arg index="0" value="Hi"/>
+        <constructor-arg index="1" value="Jack"/>
+    </bean>
+    <bean name="BMWFactory" class="com.test1.CarFactory" factory-method="create">
+        <constructor-arg index="0" value="BMW"/>
+    </bean>
+    <bean name="BenzFactory" class="com.test1.CarFactory" factory-method="create">
+        <constructor-arg index="0" value="Benz"/>
     </bean>
 </beans>
