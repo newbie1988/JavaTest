@@ -47,4 +47,14 @@
             </map>
         </property>
     </bean>
+    <bean id="Employee" class="com.test1.Person">
+        <property name="age" value="21"/>
+        <property name="name" value="Bill"/>
+    </bean>
+    <bean id="BMW" class="com.test1.BMW">
+    </bean>
+    <bean id="Company" class="com.test1.Company">
+        <constructor-arg index="0" ref="Employee"/>
+        <constructor-arg index="1" ref="BMW"/>
+    </bean>
 </beans>

@@ -35,5 +35,9 @@ public class Test {
         System.out.println("------------map----------------");
         Capitals capitals = bean.getBean("Capitals", Capitals.class);
         capitals.print();
+
+        System.out.println("-----------object-------------");
+        Company company = bean.getBean("Company", Company.class);
+        System.out.println(company);
     }
 }
