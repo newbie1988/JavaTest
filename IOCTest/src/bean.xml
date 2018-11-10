@@ -57,4 +57,28 @@
         <constructor-arg index="0" ref="Employee"/>
         <constructor-arg index="1" ref="BMW"/>
     </bean>
+
+    <bean id="People" class="com.test1.Person">
+        <property name="age" value="20"/>
+        <property name="name" value="child"/>
+    </bean>
+    <bean id="FamilyCom1" class="com.test1.Company">
+        <constructor-arg index="0">
+            <!--Spring4不支持ref local-->
+            <ref bean="People"/>
+        </constructor-arg>
+        <constructor-arg index="1">
+            <ref bean="BMW"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="FamilyCom2" class="com.test1.Company">
+        <constructor-arg index="0">
+            <ref parent="People"/>
+        </constructor-arg>
+        <constructor-arg index="1">
+            <ref bean="BMW"/>
+        </constructor-arg>
+    </bean>
+
 </beans>
