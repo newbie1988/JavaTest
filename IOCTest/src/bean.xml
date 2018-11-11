@@ -80,5 +80,11 @@
             <ref bean="BMW"/>
         </constructor-arg>
     </bean>
-
+    <bean id="LogFile" class="com.test1.LogFile" init-method="init" destroy-method="destroy">
+        <property name="file" value="/Users/shenjilong/log.txt"/>
+    </bean>
+    <bean id="Operator" class="com.test1.Operator" init-method="init"
+          destroy-method="destroy" depends-on="LogFile">
+        <property name="logFile" ref="LogFile"/>
+    </bean>
 </beans>

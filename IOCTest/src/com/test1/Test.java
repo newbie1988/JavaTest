@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 //        ApplicationContext acx = new ClassPathXmlApplicationContext("bean.xml");
 //        Person person = acx.getBean("Person", Person.class);
 //        Person person1 = acx.getBean("Person", Person.class);
@@ -43,9 +43,13 @@ public class Test {
         System.out.println("---------parent and child--------");
         ApplicationContext parent = new ClassPathXmlApplicationContext("parent.xml");
         ApplicationContext child = new ClassPathXmlApplicationContext(new String[]{"bean.xml"}, parent);
-        Company localCompany = child.getBean("FamilyCom1", Company.class);
-        System.out.println(localCompany);
+//        Company localCompany = child.getBean("FamilyCom1", Company.class);
+//        System.out.println(localCompany);
 //        Company parentCompany = child.getBean("FamilyCom2", Company.class);
 //        System.out.println(parentCompany);
+        // 只有注册销毁钩子，自定义的销毁函数才会执行
+        ((ClassPathXmlApplicationContext) child).registerShutdownHook();
+        Operator operator = child.getBean("Operator", Operator.class);
+        operator.write("hello\n");
     }
 }
