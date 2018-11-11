@@ -45,7 +45,7 @@ public class Test {
         ApplicationContext child = new ClassPathXmlApplicationContext(new String[]{"bean.xml"}, parent);
         Company localCompany = child.getBean("FamilyCom1", Company.class);
         System.out.println(localCompany);
-        Company parentCompany = child.getBean("FamilyCom2", Company.class);
-        System.out.println(parentCompany);
+//        Company parentCompany = child.getBean("FamilyCom2", Company.class);
+//        System.out.println(parentCompany);
     }
 }
