@@ -87,6 +87,10 @@
           destroy-method="destroy" depends-on="LogFile">
         <property name="logFile" ref="LogFile"/>
     </bean>
+    <!--
     <bean id="animal" class="com.test1.Dog"/>
     <bean id="Zoo" class="com.test1.Zoo" autowire="byName"/>
+    -->
+    <bean class="com.test1.Dog"/>
+    <bean id="Zoo" class="com.test1.Zoo" autowire="byType"/>
 </beans>
