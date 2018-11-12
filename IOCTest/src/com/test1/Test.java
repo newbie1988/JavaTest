@@ -51,5 +51,8 @@ public class Test {
         ((ClassPathXmlApplicationContext) child).registerShutdownHook();
         Operator operator = child.getBean("Operator", Operator.class);
         operator.write("hello\n");
+
+        Zoo zoo = child.getBean("Zoo", Zoo.class);
+        zoo.say();
     }
 }
